@@ -64,4 +64,8 @@ Review the project structure
 Evaluate implementation ideas (without copying code)
 📩 For permission requests, contact:
 
+<<<<<<< HEAD
 Telegram Whatsapp or Call 989916352600
+=======
+Telegram Whatsapp or Call 989916352600
+>>>>>>> 05bef6146c36acd43180957b1584982f8148bf20
