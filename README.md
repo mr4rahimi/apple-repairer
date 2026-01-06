@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# apple- repairer Astro
 
 ```sh
 npm create astro@latest -- --template basics
@@ -44,3 +44,24 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+⚠️ License & Usage Notice
+This project is published as a public repository for demonstration and evaluation purposes only.
+
+🚫 Unauthorized use is strictly prohibited
+
+You are NOT allowed to:
+
+Use this project or its code in other projects
+Copy or redistribute any part of it
+Modify or fork the repository
+Use it for commercial or non-commercial purposes
+✅ You ARE allowed to:
+
+View the source code
+Review the project structure
+Evaluate implementation ideas (without copying code)
+📩 For permission requests, contact:
+
+Telegram Whatsapp or Call 989916352600
