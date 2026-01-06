@@ -1,71 +1,82 @@
-# apple- repairer Astro
+# Apple Repairer – Astro Project 🍏🔧
 
-```sh
-npm create astro@latest -- --template basics
-```
+A modern, high-performance website built with **Astro** for showcasing Apple device repair services.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This project is published as a **public repository for demonstration and evaluation purposes only**.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Tech Stack
 
-```text
+- **Astro**
+- **Tailwind CSS**
+- **JavaScript / JSX**
+- **Node.js**
+
+---
+
+## 📁 Project Structure
+
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+│ ├── images/
+│ ├── videos/
+│ └── fonts/
+├── src/
+│ ├── components/
+│ ├── layouts/
+│ ├── pages/
+│ └── styles/
+├── astro.config.mjs
+├── tailwind.config.js
+├── package.json
+└── README.md
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+yaml
+Copy code
+
+---
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm install        # Install dependencies
+npm run dev        # Start local dev server (localhost:4321)
+npm run build      # Build production output
+npm run preview    # Preview production build
 
 
 ⚠️ License & Usage Notice
-This project is published as a public repository for demonstration and evaluation purposes only.
-
 🚫 Unauthorized use is strictly prohibited
+
+This repository is NOT open-source.
 
 You are NOT allowed to:
 
-Use this project or its code in other projects
-Copy or redistribute any part of it
+Use this project or its source code in other projects
+
+Copy, redistribute, or publish any part of it
+
 Modify or fork the repository
+
 Use it for commercial or non-commercial purposes
+
 ✅ You ARE allowed to:
 
 View the source code
-Review the project structure
-Evaluate implementation ideas (without copying code)
-📩 For permission requests, contact:
 
-<<<<<<< HEAD
-Telegram Whatsapp or Call 989916352600
-=======
-Telegram Whatsapp or Call 989916352600
->>>>>>> 05bef6146c36acd43180957b1584982f8148bf20
+Review the project structure and architecture
+
+Evaluate implementation ideas without copying code
+
+📄 This project is protected under a custom restrictive license.
+See the LICENSE file for full legal terms.
+
+📩 Permission Requests
+For permission requests or inquiries, contact:
+
+📱 Telegram / WhatsApp / Call
+
+📞 +98 9916352600
