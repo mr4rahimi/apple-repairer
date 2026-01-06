@@ -1,0 +1,53 @@
+---
+// Hero.astro
+// ویدئو باید در public/videos/hero.mp4 قرار داشته باشه
+const title = "نمایندگی تعمیرات اپل";
+const subtitle = "تعمیرات با گارانتی کتبی و پیک رایگان در تهران";
+---
+<section
+  class="relative w-full overflow-hidden"
+  aria-label="Hero — نمایندگی تعمیرات اپل"
+  data-nosnippet="true"
+>
+  <!-- Container با ارتفاع واکنش‌پذیر:
+       موبایل -> مربع (ارتفاع = عرض)
+       دسکتاپ -> مستطیل (مثلاً 60vh) -->
+  <div class="relative w-full h-[100vw] md:h-[60vh] lg:h-[70vh]">
+    <!-- ویدئو پس‌زمینه -->
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      src="/videos/hero.mp4"
+      poster="/images/hero-poster.jpg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      role="img"
+      aria-label="ویدئوی زمینه نمایندگی تعمیرات اپل"
+    ></video>
+
+    <!-- Overlay سیاه برای کنتراست متن -->
+    <div
+      class="absolute inset-0 bg-black/65 md:bg-black/55 backdrop-blur-sm"
+      aria-hidden="true"
+    ></div>
+
+    <!-- محتوا: متن وسط -->
+    <div class="absolute inset-0 flex items-center justify-center px-6">
+      <div class="max-w-[1100px] text-center">
+        <h1 class="text-white font-bold leading-tight
+                   text-3xl sm:text-4xl md:text-5xl lg:text-[4.25rem]
+                   tracking-tight">
+          {title}
+        </h1>
+
+        <p class="mt-4 text-gray-300 text-sm sm:text-base md:text-lg">
+          {subtitle}
+        </p>
+
+        <!-- (اختیاری) دکمه CTA اگر خواستی اضافه می‌کنیم -->
+      </div>
+    </div>
+  </div>
+</section>

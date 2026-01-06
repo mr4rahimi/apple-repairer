@@ -1,0 +1,41 @@
+---
+import InlineMedia from "./InlineMedia.client.jsx";
+---
+
+<section class="relative w-full bg-black overflow-hidden">
+  <div class="relative aspect-[16/9] w-full">
+
+    <!-- Fallback image (SEO + fast load) -->
+    <picture>
+      <img
+        src="images/iphone-hero-poster.webp"
+        alt="تعمیرات تخصصی محصولات اپل"
+        loading="lazy"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </picture>
+
+    <!-- Video -->
+    <video
+      data-inline-video
+      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+      muted
+      playsinline
+      preload="none"
+      aria-hidden="true"
+    >
+      <source src="videos/iphone-hero.mp4" type="video/mp4" />
+    </video>
+
+    <!-- End frame -->
+    <img
+      data-end-frame
+      src="images/iphone-hero-poster.webp"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+    />
+
+  </div>
+
+  <InlineMedia client:load />
+</section>

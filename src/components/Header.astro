@@ -1,0 +1,130 @@
+---
+const services = [
+  { title: "تعمیرات آیفون", href: "/iphone-2/" },
+  { title: "تعمیر ایرپاد", href: "/apple-airpods-repair/" },
+  { title: "تعمیر مک بوک", href: "/macbook-repair/" },
+  { title: "تعمیر آیپد", href: "/تعمیرات-آیپد/" },
+  { title: "تعمیر مانیتور", href: "/تعمیرات-مانیتور-اپل/" },
+  { title: "اپل واچ", href: "/apple-watch-specialized-repairs/" },
+];
+---
+
+<header id="site-header" class="sticky top-0 z-50 transition-all duration-300">
+  <div class="backdrop transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between text-white">
+
+      <!-- Right (RTL): Logo -->
+      <div class="flex items-center gap-2">
+        <img src="/images/apple-logo.svg" alt="Apple Repairer" class="h-6 w-auto" />
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+        <li>
+          <a href="/" class="hover:text-gray-300 transition">
+            نمایندگی تعمیرات اپل
+          </a>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="relative group">
+          <span class="cursor-pointer hover:text-gray-300 transition">
+            خدمات
+          </span>
+
+          <ul class="absolute right-0 mt-4 w-56 bg-black/90 backdrop-blur-xl rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            {services.map(service => (
+              <li>
+                <a
+                  href={service.href}
+                  class="block px-4 py-3 text-sm hover:bg-white/10 transition rounded-lg"
+                >
+                  {service.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+
+        <li>
+          <a href="/blog/" class="hover:text-gray-300 transition">مقالات</a>
+        </li>
+
+        <li>
+          <a href="/about-us/" class="hover:text-gray-300 transition">درباره ما</a>
+        </li>
+
+        <li>
+          <a href="/contact-us/" class="hover:text-gray-300 transition">تماس با ما</a>
+        </li>
+      </ul>
+
+      <!-- Left: Call Button (Desktop only) -->
+      <div class="hidden md:block">
+        <a
+          href="tel:02191300348"
+          class="px-4 py-2 rounded-full bg-white text-black text-sm font-semibold hover:bg-gray-200 transition"
+        >
+          تماس فوری
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-black/95 backdrop-blur-xl text-white px-4 pb-6">
+      <ul class="flex flex-col gap-4 text-sm pt-4">
+
+        <li><a href="/">نمایندگی تعمیرات اپل</a></li>
+
+        <li class="border-t border-white/10 pt-3">خدمات</li>
+        {services.map(service => (
+          <li class="pr-4">
+            <a href={service.href} class="text-gray-300">
+              {service.title}
+            </a>
+          </li>
+        ))}
+
+        <li class="border-t border-white/10 pt-3">
+          <a href="/blog/">مقالات</a>
+        </li>
+        <li><a href="/about-us/">درباره ما</a></li>
+        <li><a href="/contact-us/">تماس با ما</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('site-header');
+    const backdrop = header?.querySelector('.backdrop');
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!btn || !menu || !backdrop) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        backdrop.classList.add('bg-black/70', 'backdrop-blur-xl');
+      } else {
+        backdrop.classList.remove('bg-black/70', 'backdrop-blur-xl');
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
+
+

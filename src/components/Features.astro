@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+
+const features = [
+  { id: 1, title: "گارانتی معتبر", desc: "ارائه گارانتی معتبر Apple", icon: "lucide:shield-check" },
+  { id: 2, title: "پیک رایگان", desc: "پوشش تمامی مناطق تهران", icon: "lucide:truck" },
+  { id: 3, title: "قطعات اورجینال", desc: "استفاده از قطعات اصلی اپل", icon: "lucide:cpu" },
+  { id: 4, title: "قیمت مناسب", desc: "تضمین مناسب‌ترین قیمت تعمیرات", icon: "lucide:tag" },
+  { id: 5, title: "زمان سریع", desc: "تعمیرات فوری در کمترین زمان", icon: "lucide:clock" },
+];
+---
+
+<section aria-labelledby="features-heading" class="relative z-40">
+  <div class="max-w-7xl mx-auto px-4 md:-mt-14">
+    <h2 id="features-heading" class="sr-only">ویژگی‌ها</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+      {features.map((f) => (
+        <article
+          class="h-44 flex flex-col items-start p-5 rounded-xl border border-gray-800 bg-gradient-to-b from-black/60 to-black/40"
+          role="region"
+          aria-labelledby={`feature-${f.id}-title`}
+        >
+          <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white">
+            <Icon name={f.icon} class="w-6 h-6" aria-hidden="true" />
+          </div>
+
+          <h3 id={`feature-${f.id}-title`} class="mt-4 text-white text-lg font-semibold">
+            {f.title}
+          </h3>
+
+          <p class="mt-2 text-gray-300 text-sm">
+            {f.desc}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

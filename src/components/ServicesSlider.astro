@@ -1,0 +1,51 @@
+---
+// ServicesSlider.astro
+import "swiper/css/bundle";
+import ServicesSwiper from "./ServicesSwiper.client.jsx";
+
+const services = [
+  { title: "تعمیرات آیفون", desc: "تعمیر تخصصی آیفون با قطعات اورجینال اپل", image: "/images/services/iphone.webp", href: "/iphone-2/" },
+  { title: "تعمیرات مک‌بوک", desc: "تعمیر برد، باتری و نمایشگر مک‌بوک", image: "/images/services/macbook.webp", href: "/macbook-repair/" },
+  { title: "تعمیرات ایرپاد", desc: "تعویض باتری و تعمیر ایرپاد و کیس", image: "/images/services/airpods.webp", href: "/apple-airpods-repair/" },
+  { title: "تعمیرات آیپد", desc: "تعمیر تخصصی آیپد و تعویض قطعات", image: "/images/services/ipad.webp", href: "/تعمیرات-آیپد/" },
+  { title: "تعمیرات اپل واچ", desc: "تعمیر اپل واچ با قطعات اصلی", image: "/images/services/watch.webp", href: "/apple-watch-specialized-repairs/" },
+];
+---
+
+<section
+  aria-labelledby="services-heading"
+  class="relative h-screen bg-black overflow-hidden"
+  data-services-section
+  data-services-offset="0"
+>
+
+  <div class="swiper h-full w-full" data-services-swiper>
+    <div class="swiper-wrapper">
+      {services.map((s) => (
+        <div class="swiper-slide relative w-full h-full">
+          <a href={s.href} class="block w-full h-full">
+            <img
+              src={s.image}
+              alt={s.title}
+              class="absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <div class="relative z-10 h-full flex items-end p-10 max-w-3xl">
+              <div>
+                <h3 class="text-white text-3xl md:text-4xl font-semibold">
+                  {s.title}
+                </h3>
+                <p class="mt-4 text-gray-300 text-base md:text-lg">
+                  {s.desc}
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <ServicesSwiper client:load />
+</section>

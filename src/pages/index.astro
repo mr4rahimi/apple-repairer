@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Branches from '../components/Branches.astro';
+import Services from '../components/Services.astro';
+import ServicesSlider from '../components/ServicesSlider.astro';
+import CTASection from '../components/CTASection.astro';
+import IphoneHeader from '../components/iphoneheader.astro';
+import VideoHero from '../components/VideoHero.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+	<Hero />
+	<Features />
+  <Branches />
+   <Services />
+  <ServicesSlider />
+  <CTASection />
+  <IphoneHeader />
+  <VideoHero />
+
+   <main class="max-w-7xl mx-auto px-4">
+    <!-- ادامهٔ صفحه: سشن‌های بعدی -->
+  </main>
+</BaseLayout>
+
+<!-- Head slot -->
+<Fragment slot="head">
+  <title>نمایندگی تعمیرات اپل — Apple Repairer</title>
+  <meta name="description" content="نمایندگی تخصصی تعمیرات محصولات اپل" />
+</Fragment>
