@@ -1,39 +1,45 @@
 ---
-// Hero.astro
-// ویدئو باید در public/videos/hero.mp4 قرار داشته باشه
 const title = "نمایندگی تعمیرات اپل";
 const subtitle = "تعمیرات با گارانتی کتبی و پیک رایگان در تهران";
 ---
+
 <section
   class="relative w-full overflow-hidden"
   aria-label="Hero — نمایندگی تعمیرات اپل"
   data-nosnippet="true"
 >
-  <!-- Container با ارتفاع واکنش‌پذیر:
-       موبایل -> مربع (ارتفاع = عرض)
-       دسکتاپ -> مستطیل (مثلاً 60vh) -->
   <div class="relative w-full h-[100vw] md:h-[60vh] lg:h-[70vh]">
-    <!-- ویدئو پس‌زمینه -->
+    <!-- Fallback poster (always visible behind video) -->
+    <img
+      src="/images/hero-poster.jpg"
+      alt="نمایندگی تعمیرات اپل"
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+
+    <!-- Video (loads + plays when in view) -->
     <video
       class="absolute inset-0 w-full h-full object-cover"
-      src="/videos/hero.mp4"
-      poster="/images/hero-poster.jpg"
-      autoplay
       muted
-      loop
       playsinline
-      preload="metadata"
-      role="img"
-      aria-label="ویدئوی زمینه نمایندگی تعمیرات اپل"
-    ></video>
+      webkit-playsinline
+      loop
+      preload="none"
+      poster="/images/hero-poster.jpg"
+      data-hero-video
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
 
-    <!-- Overlay سیاه برای کنتراست متن -->
+    <!-- Overlay -->
     <div
       class="absolute inset-0 bg-black/65 md:bg-black/55 backdrop-blur-sm"
       aria-hidden="true"
     ></div>
 
-    <!-- محتوا: متن وسط -->
+    <!-- Content -->
     <div class="absolute inset-0 flex items-center justify-center px-6">
       <div class="max-w-[1100px] text-center">
         <h1 class="text-white font-bold leading-tight
@@ -45,9 +51,42 @@ const subtitle = "تعمیرات با گارانتی کتبی و پیک رایگ
         <p class="mt-4 text-gray-300 text-sm sm:text-base md:text-lg">
           {subtitle}
         </p>
-
-        <!-- (اختیاری) دکمه CTA اگر خواستی اضافه می‌کنیم -->
       </div>
     </div>
   </div>
+
+  <script is:inline>
+    (() => {
+      const v = document.querySelector("[data-hero-video]");
+      if (!v) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return;
+
+      // Try to play only when it becomes visible (mobile friendly)
+      const playVideo = async () => {
+        try {
+          // Ensure it loads
+          if (v.readyState < 2) v.load();
+          const p = v.play();
+          if (p && typeof p.then === "function") await p;
+        } catch (e) {
+          // Autoplay might still be blocked -> poster image remains visible
+        }
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            playVideo();
+          } else {
+            // Pause offscreen for performance
+            try { v.pause(); } catch {}
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "200px" });
+
+      io.observe(v);
+    })();
+  </script>
 </section>

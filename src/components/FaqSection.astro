@@ -1,0 +1,246 @@
+---
+const id = "faq";
+
+const faqs = [
+  {
+    q: "هزینه تعمیرات محصولات اپل چقدر است؟",
+    a: "هزینه تعمیر به مدل دستگاه، نوع خرابی و نیاز یا عدم نیاز به تعویض قطعه بستگی دارد. ابتدا عیب‌یابی انجام می‌شود و سپس هزینه دقیق اعلام می‌گردد تا قبل از شروع تعمیر تصمیم‌گیری شفاف داشته باشید."
+  },
+  {
+    q: "آیا تعمیرات با قطعات اورجینال انجام می‌شود؟",
+    a: "در خدماتی که نیاز به تعویض قطعه باشد، اولویت با قطعات اصلی و اورجینال است. در صورت وجود گزینه‌های جایگزین (با کیفیت‌های مختلف)، قبل از اقدام به تعمیر، توضیح کامل ارائه می‌شود تا انتخاب آگاهانه انجام دهید."
+  },
+  {
+    q: "تعمیر آیفون و آیپد چقدر زمان می‌برد؟",
+    a: "زمان تعمیر به نوع ایراد بستگی دارد. مشکلات نرم‌افزاری معمولاً سریع‌تر انجام می‌شوند، اما ایرادات سخت‌افزاری مثل نمایشگر، باتری یا برد ممکن است زمان بیشتری نیاز داشته باشد. هدف ما تحویل در کوتاه‌ترین زمان با حفظ کیفیت تعمیر است."
+  },
+  {
+    q: "اگر دستگاه من روشن نمی‌شود یا روی لوگوی اپل گیر کرده چه کار کنم؟",
+    a: "این مشکل می‌تواند نرم‌افزاری (آپدیت ناقص، خطای iOS/iPadOS) یا سخت‌افزاری (باتری، برد، اتصالات) باشد. پیشنهاد می‌شود از اقدامات ریسکی مثل فلش‌های غیرمطمئن خودداری کنید و برای عیب‌یابی دقیق اقدام کنید."
+  },
+  {
+    q: "آیا برای تعمیر مک‌بوک، اطلاعات من پاک می‌شود؟",
+    a: "در بسیاری از تعمیرات سخت‌افزاری نیازی به حذف اطلاعات نیست. با این حال، در برخی سناریوهای نرم‌افزاری یا ایرادات ذخیره‌سازی، ممکن است بکاپ توصیه شود. قبل از شروع کار، وضعیت و ریسک‌ها به شما توضیح داده می‌شود."
+  },
+  {
+    q: "آیا تعمیر اپل واچ و ایرپاد هم انجام می‌دهید؟",
+    a: "بله. تعمیر اپل واچ شامل عیب‌یابی دقیق نرم‌افزاری/سخت‌افزاری و رفع مشکلاتی مثل صدا، میکروفن، نمایشگر و شارژ است. تعمیر ایرپاد نیز شامل مشکلات اتصال، باتری، کیس شارژ و افت کیفیت صدا می‌شود."
+  },
+  {
+    q: "چطور مطمئن شوم تعمیر به‌صورت استاندارد انجام شده است؟",
+    a: "تعمیر استاندارد یعنی عیب‌یابی دقیق، استفاده از ابزار تخصصی، اجرای صحیح مراحل باز و بسته‌کردن، و انجام تست‌های نهایی (صدا، شارژ، تاچ، نمایشگر، ارتباطات). ما پس از تعمیر، تست‌های عملکردی را انجام می‌دهیم تا نتیجه پایدار باشد."
+  },
+  {
+    q: "آیا امکان ارسال دستگاه از شهرهای دیگر وجود دارد؟",
+    a: "بله. کاربران سراسر ایران می‌توانند دستگاه را از طریق پست یا ارسال مطمئن به مراکز ما ارسال کنند. پیش از ارسال، برای هماهنگی و دریافت راهنمای بسته‌بندی و ثبت دستگاه، تماس بگیرید."
+  },
+  {
+    q: "برای مشکلات آب‌خوردگی آیفون یا آیپد چه اقدامی لازم است؟",
+    a: "در صورت آب‌خوردگی، دستگاه را خاموش کنید، به شارژ نزنید و از خشک‌کردن با حرارت مستقیم (سشوار) خودداری کنید. آب‌خوردگی نیاز به بررسی سریع و شست‌وشوی برد/قطعات به روش تخصصی دارد تا از خرابی گسترده جلوگیری شود."
+  },
+  {
+    q: "آیا تعمیرات شامل ضمانت‌نامه می‌شود؟",
+    a: "بسته به نوع تعمیر و قطعه تعویض‌شده، ضمانت‌نامه تعمیرات ارائه می‌شود. جزئیات ضمانت و شرایط آن هنگام ثبت دستگاه و قبل از شروع تعمیر اعلام خواهد شد."
+  }
+];
+
+
+---
+
+<section id={id} class="relative w-full bg-black overflow-hidden" aria-label="سوالات متداول تعمیرات اپل">
+  <!-- background: subtle animated lines -->
+  <div class="pointer-events-none absolute inset-0 opacity-75" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-black"></div>
+    <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="faqLineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="rgba(255,255,255,0)" />
+          <stop offset="0.5" stop-color="rgba(255,255,255,0.30)" />
+          <stop offset="1" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+        <filter id="faqGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1">
+        <path d="M40,140 C260,80 290,260 460,210 S720,130 860,170 980,260 1160,220" />
+        <path d="M10,430 C240,360 330,540 520,480 S740,360 900,430 1040,520 1180,460" />
+      </g>
+
+      <g filter="url(#faqGlow)" fill="none" stroke="url(#faqLineGrad)" stroke-width="2">
+        <path class="faq-scan f1" d="M40,140 C260,80 290,260 460,210 S720,130 860,170 980,260 1160,220" />
+        <path class="faq-scan f2" d="M10,430 C240,360 330,540 520,480 S740,360 900,430 1040,520 1180,460" />
+      </g>
+    </svg>
+    <div class="absolute inset-0 faq-dots"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-right">
+      <h2 class="text-white font-semibold tracking-tight text-3xl sm:text-4xl leading-[1.1]">
+        سوالات متداول
+      </h2>
+      <p class="mt-4 text-white/75 text-sm sm:text-base leading-8">
+        پاسخ‌های کوتاه و دقیق به پرسش‌هایی که کاربران قبل از ثبت تعمیرات آیفون، آیپد، مک‌بوک، اپل واچ و ایرپاد بیشتر جستجو می‌کنند.
+      </p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="mt-10 space-y-3">
+      {faqs.map((item, idx) => (
+        <details class="faq-item group rounded-2xl bg-white/[0.04] backdrop-blur-sm overflow-hidden">
+          <summary
+            class="flex items-center justify-between gap-4 cursor-pointer select-none
+                   px-5 sm:px-6 py-4 sm:py-5 text-right"
+            aria-label={item.q}
+          >
+            <span class="text-white/95 font-semibold text-sm sm:text-base leading-7">
+              {item.q}
+            </span>
+
+            <!-- plus/minus icon -->
+            <span class="relative h-10 w-10 shrink-0 rounded-xl bg-white/[0.06] grid place-items-center">
+              <span class="absolute h-[2px] w-4 bg-white/80"></span>
+              <span class="absolute h-4 w-[2px] bg-white/80 faq-plus"></span>
+            </span>
+          </summary>
+
+          <div class="faq-content px-5 sm:px-6 pb-5 sm:pb-6">
+            <div class="pt-2 text-white/80 text-sm sm:text-base leading-8">
+              {item.a}
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+
+
+  <script is:inline>
+    (() => {
+      const root = document.currentScript?.closest("section");
+      if (!root) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const items = Array.from(root.querySelectorAll("details.faq-item"));
+
+      // Make only one open at a time (Apple-like)
+      items.forEach((d) => {
+        d.addEventListener("toggle", () => {
+          if (!d.open) return;
+          items.forEach((other) => {
+            if (other !== d) other.open = false;
+          });
+        });
+      });
+
+      // Optional: animate opening height via max-height (smooth)
+      if (reduce) return;
+
+      items.forEach((d) => {
+        const content = d.querySelector(".faq-content");
+        if (!content) return;
+
+        const setCollapsed = () => {
+          content.style.maxHeight = "0px";
+          content.style.opacity = "0";
+          content.style.transform = "translateY(-4px)";
+        };
+
+        const setExpanded = () => {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.opacity = "1";
+          content.style.transform = "translateY(0)";
+        };
+
+        // init
+        setCollapsed();
+
+        d.addEventListener("toggle", () => {
+          if (d.open) {
+            // small delay for premium feel
+            requestAnimationFrame(() => {
+              setExpanded();
+            });
+          } else {
+            setCollapsed();
+          }
+        });
+
+        // keep correct height on resize
+        window.addEventListener("resize", () => {
+          if (d.open) setExpanded();
+        }, { passive: true });
+      });
+    })();
+  </script>
+
+  <style>
+    /* Hide default marker */
+    summary::-webkit-details-marker { display: none; }
+    summary { list-style: none; }
+
+    /* Accordion animation */
+    .faq-content{
+      max-height: 0px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: max-height 520ms cubic-bezier(.2,.9,.15,1), opacity 320ms ease, transform 320ms ease;
+      will-change: max-height, opacity, transform;
+    }
+
+    /* rotate/transform the plus icon to minus */
+    details[open] .faq-plus{
+      transform: scaleY(0);
+      transition: transform 260ms ease;
+    }
+    .faq-plus{
+      transition: transform 260ms ease;
+    }
+
+    /* hover */
+    .faq-item:hover{
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.10);
+    }
+
+    /* background animation */
+    .faq-scan{
+      stroke-dasharray: 220 1200;
+      stroke-dashoffset: 1400;
+      animation: faqScan 5.1s linear infinite;
+      opacity: 0.95;
+    }
+    .f2{ animation-delay: 0.9s; }
+
+    @keyframes faqScan{
+      0%   { stroke-dashoffset: 1400; opacity: 0; }
+      12%  { opacity: 0.95; }
+      100% { stroke-dashoffset: -800; opacity: 0; }
+    }
+
+    .faq-dots{
+      background-image: radial-gradient(rgba(255,255,255,0.16) 1px, rgba(0,0,0,0) 1px);
+      background-size: 22px 22px;
+      opacity: 0.12;
+      animation: faqDrift 14s linear infinite;
+      mask-image: radial-gradient(circle at 55% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 82%);
+      -webkit-mask-image: radial-gradient(circle at 55% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 82%);
+    }
+    @keyframes faqDrift{
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(16px,-10px,0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .faq-scan, .faq-dots{ animation: none !important; }
+      .faq-content{ transition: none !important; }
+    }
+  </style>
+</section>

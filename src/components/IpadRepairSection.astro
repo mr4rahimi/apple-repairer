@@ -1,0 +1,320 @@
+---
+const id = "ipad-repair";
+const heroImg = "/images/ipad-1860-1117.webp";   // 1860x1117
+const sideImg = "/images/ipad-500-400.webp";    // 500x400
+---
+
+<section id={id} data-ipad-section class="relative w-full bg-black overflow-hidden" aria-label="تعمیر آیپد اپل">
+  <!-- Background: animated tech lines + dots -->
+  <div class="pointer-events-none absolute inset-0 opacity-80" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-black"></div>
+
+    <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="ipadLineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="rgba(255,255,255,0)" />
+          <stop offset="0.5" stop-color="rgba(255,255,255,0.35)" />
+          <stop offset="1" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+
+        <filter id="ipadGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1">
+        <path d="M40,120 C220,70 290,240 420,210 S640,100 760,150 940,290 1160,210" />
+        <path d="M20,420 C220,360 340,520 520,470 S700,350 860,420 980,520 1180,460" />
+        <path d="M80,620 C280,520 330,650 520,590 S820,480 980,560 1070,650 1200,610" />
+        <path d="M60,260 C180,320 280,260 380,310 S540,420 680,340 860,250 980,330 1100,410 1200,360" />
+      </g>
+
+      <g filter="url(#ipadGlow)" fill="none" stroke="url(#ipadLineGrad)" stroke-width="2">
+        <path class="ipad-scan i1" d="M40,120 C220,70 290,240 420,210 S640,100 760,150 940,290 1160,210" />
+        <path class="ipad-scan i2" d="M20,420 C220,360 340,520 520,470 S700,350 860,420 980,520 1180,460" />
+        <path class="ipad-scan i3" d="M80,620 C280,520 330,650 520,590 S820,480 980,560 1070,650 1200,610" />
+        <path class="ipad-scan i4" d="M60,260 C180,320 280,260 380,310 S540,420 680,340 860,250 980,330 1100,410 1200,360" />
+      </g>
+
+      <g fill="rgba(255,255,255,0.55)">
+        <circle cx="420" cy="210" r="2.5" />
+        <circle cx="760" cy="150" r="2.5" />
+        <circle cx="520" cy="470" r="2.5" />
+        <circle cx="860" cy="420" r="2.5" />
+        <circle cx="980" cy="560" r="2.5" />
+        <circle cx="380" cy="310" r="2.5" />
+      </g>
+    </svg>
+
+    <div class="absolute inset-0 ipad-dots"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <!-- 1) Title -->
+    <h2 class="text-white font-semibold tracking-tight leading-[1.1] text-3xl sm:text-4xl lg:text-5xl text-right">
+      تعمیر آیپد اپل
+    </h2>
+
+    <!-- 2) Big full-width image -->
+    <figure class="mt-8">
+      <div class="relative overflow-hidden rounded-3xl bg-white/[0.03]">
+        <img
+          src={heroImg}
+          alt="تعمیر آیپد اپل با تجهیزات تخصصی در نمایندگی تعمیرات اپل"
+          width="1860"
+          height="1117"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          class="w-full h-auto object-cover"
+        />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+      </div>
+      <figcaption class="mt-3 text-right text-white/55 text-xs sm:text-sm leading-6">
+        بررسی تخصصی iPad (iPad Air / iPad Pro و سایر مدل‌ها) با استانداردهای تعمیرات اپل.
+      </figcaption>
+    </figure>
+
+    <!-- 3) Sticky-left + scroll-right (DESKTOP) | normal flow (MOBILE) -->
+    <div class="mt-10 grid gap-10 lg:grid-cols-12 items-start lg:h-screen" data-ipad-lock>
+      <!-- Left sticky image (desktop) -->
+      <div class="hidden lg:block lg:col-span-5">
+        <div class="sticky top-10">
+          <div class="relative overflow-hidden rounded-3xl bg-white/[0.03]">
+            <img
+              src={sideImg}
+              alt="خدمات تخصصی تعمیر آیپد اپل"
+              width="500"
+              height="400"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right scrollable content (desktop), normal on mobile -->
+      <div class="lg:col-span-7 text-right">
+        <div class="lg:h-[calc(100vh-5rem)] lg:overflow-y-auto ipad-scroll" data-ipad-scroll>
+          <p class="text-white/90 font-semibold text-base sm:text-lg">
+            تعمیر دقیق برای iPad Air و iPad Pro
+          </p>
+
+          <p class="mt-4 text-white/80 text-sm sm:text-base leading-8">
+            اگر دستگاه شما آیپد اپل است و دچار خرابی شده، باید تعمیر آن را به مرکزی بسپارید که استانداردهای لازم در زمینه تعمیر تبلت اپل را رعایت کند.
+            تعمیر آیپد نیز مانند آیفون نیاز به دانش تخصصی و ابزارهای حرفه‌ای دارد که تنها در مراکز رسمی و معتبر یافت می‌شود.
+          </p>
+
+          <p class="mt-5 text-white/80 text-sm sm:text-base leading-8">
+            در نمایندگی تعمیرات اپل، متخصصین بخش آیپد با آشنایی کامل به ساختار انواع آیپد از جمله آیپد ایر و آیپد پرو،
+            به‌صورت دقیق دستگاه را بررسی کرده و در کمترین زمان ممکن آن را تعمیر می‌کنند.
+          </p>
+
+          <div class="mt-8 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+            <h3 class="text-white/90 font-semibold text-base sm:text-lg">
+              خدمات تعمیر آیپد شامل:
+            </h3>
+
+            <ul class="mt-4 space-y-3 text-white/85 text-sm sm:text-base">
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>عیب‌یابی تخصصی</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>تعمیر یا تعویض قطعات آسیب‌دیده با نمونه‌های اورجینال</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>ترمیم بدنه و بخش‌های سخت‌افزاری</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>رفع مشکلات نرم‌افزاری آیپد</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>ارائه ضمانت‌نامه تعمیرات</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-10 space-y-6">
+            <div class="rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+              <h3 class="text-white/90 font-semibold text-base sm:text-lg">
+                رایج‌ترین مشکلات آیپد که نیاز به تعمیر تخصصی دارند
+              </h3>
+              <p class="mt-3 text-white/75 text-sm sm:text-base leading-8">
+                کاربران معمولاً با جستجوهایی مثل «آیپد روشن نمی‌شود»، «شارژ نشدن آیپد»، «مشکل تاچ آیپد»، «تعویض باتری آیپد»
+                یا «تعمیر ال‌سی‌دی آیپد» به دنبال یک مرکز مطمئن هستند. تشخیص علت اصلی این مشکلات ممکن است به باتری، کانکتور شارژ،
+                برد، آب‌خوردگی یا اختلالات نرم‌افزاری مرتبط باشد؛ بنابراین عیب‌یابی استاندارد، مهم‌ترین مرحله قبل از تعمیر است.
+              </p>
+            </div>
+
+            <div class="rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+              <h3 class="text-white/90 font-semibold text-base sm:text-lg">
+                روند استاندارد تعمیر آیپد در نمایندگی
+              </h3>
+              <ol class="mt-4 space-y-3 text-white/75 text-sm sm:text-base leading-8 list-decimal list-inside text-right">
+                <li>ثبت اطلاعات دستگاه و بررسی اولیه</li>
+                <li>عیب‌یابی تخصصی و اعلام نتیجه بررسی</li>
+                <li>تعمیر/تعویض قطعه با نمونه اورجینال (در صورت نیاز)</li>
+                <li>تست نهایی: تاچ، نمایشگر، شارژ، صدا، ارتباطات و پایداری سیستم</li>
+                <li>تحویل دستگاه همراه با ضمانت‌نامه تعمیرات</li>
+              </ol>
+            </div>
+
+
+            <div class="mt-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+  <h3 class="text-white/90 font-semibold text-base sm:text-lg">
+    چه زمانی آیپد نیاز به تعمیر فوری دارد؟
+  </h3>
+  <p class="mt-3 text-white/75 text-sm sm:text-base leading-8">
+    اگر آیپد شما روشن نمی‌شود، روی لوگوی اپل گیر می‌کند، شارژ نمی‌گیرد یا درصد باتری به‌صورت غیرعادی کاهش پیدا می‌کند،
+    بهتر است تعمیر را به تعویق نیندازید. همچنین در مدل‌هایی که مشکل تاچ، شکستگی نمایشگر یا خطوط روی تصویر دارند،
+    استفاده ادامه‌دار می‌تواند باعث آسیب بیشتر به فلت‌ها و برد شود. در مرکز تخصصی تعمیر آیپد، ابتدا عیب‌یابی دقیق انجام می‌شود
+    تا مشخص شود ایراد از باتری، کانکتور شارژ، نمایشگر، برد یا بخش نرم‌افزاری است.
+  </p>
+</div>
+
+<div class="mt-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+  <h3 class="text-white/90 font-semibold text-base sm:text-lg">
+    تعمیر آیپد بهتر است یا تعویض قطعه؟
+  </h3>
+  <p class="mt-3 text-white/75 text-sm sm:text-base leading-8">
+    در بسیاری از موارد، تعمیر اصولی (به‌خصوص در مشکلات برد یا کانکتور شارژ) مقرون‌به‌صرفه‌تر از تعویض کامل قطعه است.
+    اما در مواردی مثل آسیب شدید نمایشگر یا افت شدید سلامت باتری، تعویض با قطعه اورجینال بهترین نتیجه را می‌دهد.
+    معیار تصمیم‌گیری باید «نتیجه نهایی + دوام تعمیر + تست‌های بعد از تعمیر» باشد، نه صرفاً هزینه اولیه.
+  </p>
+</div>
+
+
+        
+
+            <!-- Mobile: show small image at the end -->
+            <div class="lg:hidden mt-8">
+              <div class="relative overflow-hidden rounded-3xl bg-white/[0.03]">
+                <img
+                  src={sideImg}
+                  alt="خدمات تخصصی تعمیر آیپد اپل"
+                  width="500"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/10"></div>
+              </div>
+            </div>
+
+            <div class="h-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+  (() => {
+    const section = document.querySelector('[data-ipad-section]');
+    if (!section) return;
+
+    const lockArea = section.querySelector('[data-ipad-lock]');
+    const scroller = section.querySelector('[data-ipad-scroll]');
+    if (!lockArea || !scroller) return;
+
+    const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+
+    const canScrollDown = () => scroller.scrollTop + scroller.clientHeight < scroller.scrollHeight - 1;
+    const canScrollUp = () => scroller.scrollTop > 0;
+
+   
+    const isLockActive = () => {
+      const r = lockArea.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+
+   
+
+      const enter = r.top <= vh * 0.25;
+      const notPast = r.bottom >= vh * 0.35;
+      return enter && notPast;
+    };
+
+    const onWheel = (e) => {
+      if (!isDesktop()) return;
+      if (!isLockActive()) return;
+
+      const dy = e.deltaY;
+      if (Math.abs(dy) < 0.5) return;
+
+      if ((dy > 0 && canScrollDown()) || (dy < 0 && canScrollUp())) {
+        e.preventDefault();
+        scroller.scrollTop += dy;
+      }
+   
+    };
+
+    window.addEventListener('wheel', onWheel, { passive: false });
+
+    window.addEventListener('beforeunload', () => {
+      window.removeEventListener('wheel', onWheel);
+    });
+  })();
+</script>
+
+
+
+  <style>
+    /* Hide scrollbar but keep scroll */
+    .ipad-scroll{
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .ipad-scroll::-webkit-scrollbar{
+      width: 0px;
+      height: 0px;
+    }
+
+    /* Animated scan */
+    .ipad-scan{
+      stroke-dasharray: 220 1200;
+      stroke-dashoffset: 1400;
+      animation: ipadScan 4.9s linear infinite;
+      opacity: 0.95;
+    }
+    .i2 { animation-delay: 0.6s; }
+    .i3 { animation-delay: 1.2s; }
+    .i4 { animation-delay: 1.8s; }
+
+    @keyframes ipadScan{
+      0%   { stroke-dashoffset: 1400; opacity: 0; }
+      12%  { opacity: 0.95; }
+      100% { stroke-dashoffset: -800; opacity: 0; }
+    }
+
+    /* Dots */
+    .ipad-dots{
+      background-image: radial-gradient(rgba(255,255,255,0.16) 1px, rgba(0,0,0,0) 1px);
+      background-size: 22px 22px;
+      opacity: 0.12;
+      animation: ipadDrift 14s linear infinite;
+      mask-image: radial-gradient(circle at 55% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 82%);
+      -webkit-mask-image: radial-gradient(circle at 55% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 82%);
+    }
+    @keyframes ipadDrift{
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(16px,-10px,0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .ipad-scan, .ipad-dots{ animation: none !important; }
+    }
+  </style>
+</section>

@@ -1,0 +1,248 @@
+---
+const phoneNumber = "02191300348";
+---
+
+<section id="macbook-repair" class="relative w-full overflow-hidden bg-black" aria-label="تعمیر تخصصی مک بوک">
+  <!-- Background image (SEO-friendly + lazy) -->
+  <img
+    src= "images/macbook-background.webp";
+    width="1728"
+    height="912"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt="تعمیر تخصصی مک بوک"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <!-- Dark overlays for readability -->
+  <div class="absolute inset-0 bg-black/5"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/15 via-black/25 to-black/25"></div>
+
+  <!-- Animated white lines (circuit scan) -->
+  <div class="pointer-events-none absolute inset-0">
+    <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="macLineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="rgba(255,255,255,0)" />
+          <stop offset="0.5" stop-color="rgba(255,255,255,0.40)" />
+          <stop offset="1" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+
+        <filter id="macGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.2" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- subtle base lines -->
+      <g fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1">
+        <path d="M30,140 C230,60 330,230 470,210 S720,120 840,160 980,280 1180,220" />
+        <path d="M10,430 C240,360 340,540 540,470 S760,350 900,420 1040,520 1180,460" />
+        <path d="M60,610 C280,520 360,650 560,590 S840,470 980,560 1090,650 1200,610" />
+        <path d="M50,270 C180,340 290,260 420,320 S600,430 720,350 900,250 1040,340 1120,420 1200,380" />
+      </g>
+
+      <!-- animated scan -->
+      <g filter="url(#macGlow)" fill="none" stroke="url(#macLineGrad)" stroke-width="2">
+        <path class="mac-scan s1" d="M30,140 C230,60 330,230 470,210 S720,120 840,160 980,280 1180,220" />
+        <path class="mac-scan s2" d="M10,430 C240,360 340,540 540,470 S760,350 900,420 1040,520 1180,460" />
+        <path class="mac-scan s3" d="M60,610 C280,520 360,650 560,590 S840,470 980,560 1090,650 1200,610" />
+        <path class="mac-scan s4" d="M50,270 C180,340 290,260 420,320 S600,430 720,350 900,250 1040,340 1120,420 1200,380" />
+      </g>
+
+      <!-- nodes -->
+      <g fill="rgba(255,255,255,0.55)">
+        <circle cx="470" cy="210" r="2.5" />
+        <circle cx="840" cy="160" r="2.5" />
+        <circle cx="540" cy="470" r="2.5" />
+        <circle cx="900" cy="420" r="2.5" />
+        <circle cx="980" cy="560" r="2.5" />
+        <circle cx="420" cy="320" r="2.5" />
+      </g>
+    </svg>
+
+    <div class="absolute inset-0 mac-dots" aria-hidden="true"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-12 items-start">
+      <!-- Content -->
+      <div class="lg:col-span-7 text-right">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 py-1 text-xs sm:text-sm text-white/80">
+          <span class="h-1.5 w-1.5 rounded-full bg-white/60"></span>
+          <span>پشتیبانی از Air • Retina • Pro و سایر مدل‌ها</span>
+        </div>
+
+        <h2
+          class="mt-5 text-white font-semibold leading-[1.15]
+                 text-2xl sm:text-3xl lg:text-4xl opacity-0 translate-y-3 will-change-transform"
+          data-anim="title"
+        >
+          تعمیر تخصصی مک بوک
+        </h2>
+
+        <p
+          class="mt-4 text-white/80 text-sm sm:text-base leading-8 opacity-0 translate-y-3 will-change-transform"
+          data-anim="desc"
+        >
+          خدمات تعمیر مک‌بوک در نمایندگی شامل تمامی مدل‌های این برند، از جمله مک‌بوک ایر، مک‌بوک رتینا، مک‌بوک پرو و سایر نسخه‌ها می‌شود.
+          برخی از خدمات قابل ارائه برای این دستگاه شامل موارد زیر است:
+        </p>
+
+        <ul dir="ltr"
+          class="mt-6 space-y-3 text-white/85 text-sm sm:text-base opacity-0 translate-y-3"
+          data-anim="list"
+        >
+          <li class="flex flex-row-reverse items-start gap-3">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+            <span>تعمیر مشکل شارژ نشدن مک‌بوک</span>
+          </li>
+          <li class="flex flex-row-reverse items-start gap-3">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+            <span>تعمیر یا تعویض لولای مک‌بوک</span>
+          </li>
+          <li class="flex flex-row-reverse items-start gap-3">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+            <span>رفع ایرادات ال‌سی‌دی مک‌بوک</span>
+          </li>
+          <li class="flex flex-row-reverse items-start gap-3">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+            <span>تعمیر و تعویض کیبورد مک</span>
+          </li>
+          <li class="flex flex-row-reverse items-start gap-3">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+            <span>تعمیر تخصصی مادربرد مک‌بوک</span>
+          </li>
+          <li class="flex flex-row-reverse items-start gap-3">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+            <span>تعویض صفحه‌نمایش مک‌بوک با قطعه اورجینال</span>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Right card (nice “Apple-like” specs panel) -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-2xl border border-white/12 bg-black/35 p-5 sm:p-6 backdrop-blur-sm overflow-hidden">
+          <div class="absolute inset-0 opacity-50">
+            <div class="absolute -top-24 -right-24 h-60 w-60 rounded-full blur-3xl bg-white/15"></div>
+            <div class="absolute -bottom-28 -left-24 h-72 w-72 rounded-full blur-3xl bg-white/10"></div>
+          </div>
+
+          <div class="relative text-right">
+            <div class="text-white/85 text-xs sm:text-sm">پروسه استاندارد و دقیق</div>
+            <div class="mt-1 text-white text-base sm:text-lg font-semibold">عیب‌یابی → تعمیر → تست نهایی</div>
+
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <div class="rounded-xl border border-white/12 bg-black/35 p-4">
+                <div class="text-white font-semibold">قطعه اورجینال</div>
+                <div class="mt-1 text-white/60 text-xs sm:text-sm">تعویض با قطعات اصلی</div>
+              </div>
+              <div class="rounded-xl border border-white/12 bg-black/35 p-4">
+                <div class="text-white font-semibold">تست کامل</div>
+                <div class="mt-1 text-white/60 text-xs sm:text-sm">بررسی شارژ، نمایشگر، کیبورد</div>
+              </div>
+              <div class="rounded-xl border border-white/12 bg-black/35 p-4">
+                <div class="text-white font-semibold">تعمیر مادربرد</div>
+                <div class="mt-1 text-white/60 text-xs sm:text-sm">سطح‌بندی تخصصی برد</div>
+              </div>
+              <div class="rounded-xl border border-white/12 bg-black/35 p-4">
+                <div class="text-white font-semibold">پذیرش سراسری</div>
+                <div class="mt-1 text-white/60 text-xs sm:text-sm">ارسال و دریافت با پست</div>
+              </div>
+            </div>
+
+            <a
+              href={`tel:${phoneNumber}`}
+              class="mt-5 inline-flex w-full items-center justify-center rounded-xl
+                     bg-white/90 text-black px-4 py-2.5 text-sm font-semibold
+                     hover:bg-white transition"
+            >
+              شروع تماس
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entrance animations (SEO-safe: content is in HTML; only animates on view) -->
+  <script is:inline>
+    (() => {
+      const root = document.currentScript?.closest("section");
+      if (!root) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const reveal = () => {
+        const order = ["title", "desc", "list", "cta"];
+        order.forEach((k, i) => {
+          const el = root.querySelector(`[data-anim="${k}"]`);
+          if (!el) return;
+          if (reduce) el.classList.add("mac-reveal");
+          else setTimeout(() => el.classList.add("mac-reveal"), 160 + i * 160);
+        });
+      };
+
+      if (reduce) return reveal();
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            reveal();
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.18 });
+
+      io.observe(root);
+    })();
+  </script>
+
+  <style>
+    /* reveal */
+    [data-anim] { transition: opacity 700ms ease, transform 700ms ease; }
+    .mac-reveal { opacity: 1 !important; transform: translateY(0) !important; }
+
+    /* scan line animation */
+    .mac-scan{
+      stroke-dasharray: 240 1200;
+      stroke-dashoffset: 1500;
+      animation: macScan 5s linear infinite;
+      opacity: 0.95;
+    }
+    .s2 { animation-delay: .6s; }
+    .s3 { animation-delay: 1.2s; }
+    .s4 { animation-delay: 1.8s; }
+
+    @keyframes macScan {
+      0%   { stroke-dashoffset: 1500; opacity: 0; }
+      12%  { opacity: 0.95; }
+      100% { stroke-dashoffset: -900; opacity: 0; }
+    }
+
+    /* dots */
+    .mac-dots{
+      background-image: radial-gradient(rgba(255,255,255,0.16) 1px, rgba(0,0,0,0) 1px);
+      background-size: 24px 24px;
+      opacity: 0.16;
+      animation: macDrift 14s linear infinite;
+      mask-image: radial-gradient(circle at 55% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 80%);
+      -webkit-mask-image: radial-gradient(circle at 55% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 80%);
+    }
+    @keyframes macDrift {
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(16px, -12px, 0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .mac-scan, .mac-dots { animation: none !important; }
+      [data-anim] { transition: none !important; }
+    }
+  </style>
+</section>

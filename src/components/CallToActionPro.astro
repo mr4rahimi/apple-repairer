@@ -1,0 +1,195 @@
+---
+const id = "contact-cta";
+const phoneNumber = "02191300348";
+const phoneDisplay = "۰۲۱-۹۱۳۰۰۳۴۸";
+---
+
+<section id={id} class="relative w-full bg-black overflow-hidden" aria-label="تماس با نمایندگی تعمیرات اپل">
+  <!-- Background: animated tech lines + glow -->
+  <div class="pointer-events-none absolute inset-0 opacity-80" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-black"></div>
+
+    <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="ctaLineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="rgba(255,255,255,0)" />
+          <stop offset="0.5" stop-color="rgba(255,255,255,0.38)" />
+          <stop offset="1" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+
+        <filter id="ctaGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.6" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1">
+        <path d="M40,120 C220,70 290,240 420,210 S640,100 760,150 940,290 1160,210" />
+        <path d="M20,420 C220,360 340,520 520,470 S700,350 860,420 980,520 1180,460" />
+        <path d="M60,260 C180,320 280,260 380,310 S540,420 680,340 860,250 980,330 1100,410 1200,360" />
+        <path d="M80,620 C280,520 330,650 520,590 S820,480 980,560 1070,650 1200,610" />
+      </g>
+
+      <g filter="url(#ctaGlow)" fill="none" stroke="url(#ctaLineGrad)" stroke-width="2">
+        <path class="cta-scan s1" d="M40,120 C220,70 290,240 420,210 S640,100 760,150 940,290 1160,210" />
+        <path class="cta-scan s2" d="M20,420 C220,360 340,520 520,470 S700,350 860,420 980,520 1180,460" />
+        <path class="cta-scan s3" d="M60,260 C180,320 280,260 380,310 S540,420 680,340 860,250 980,330 1100,410 1200,360" />
+        <path class="cta-scan s4" d="M80,620 C280,520 330,650 520,590 S820,480 980,560 1070,650 1200,610" />
+      </g>
+    </svg>
+
+    <div class="absolute inset-0 cta-dots"></div>
+    <div class="absolute -top-28 -right-24 h-96 w-96 rounded-full blur-3xl bg-white/10"></div>
+    <div class="absolute -bottom-28 -left-24 h-96 w-96 rounded-full blur-3xl bg-white/8"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-12 items-center">
+      <!-- copy -->
+      <div class="lg:col-span-7 text-right">
+        <div class="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 text-xs sm:text-sm text-white/80">
+          <span class="h-1.5 w-1.5 rounded-full bg-white/60"></span>
+          <span>مشاوره سریع • ثبت درخواست تعمیر • ارسال از سراسر کشور</span>
+        </div>
+
+        <h2
+          class="mt-5 text-white font-semibold leading-[1.1]
+                 text-3xl sm:text-4xl lg:text-5xl opacity-0 translate-y-4"
+          data-cta="title"
+        >
+          همین الان برای تعمیرات اپل تماس بگیرید
+        </h2>
+
+        <p
+          class="mt-4 text-white/80 text-sm sm:text-base leading-8 opacity-0 translate-y-4"
+          data-cta="desc"
+        >
+          برای دریافت مشاوره تخصصی، بررسی مشکل دستگاه و اطلاع از روند خدمات، کافی است تماس بگیرید.
+          تکنسین‌ها راهنمایی می‌کنند چه اقداماتی انجام دهید و در صورت نیاز، نزدیک‌ترین مرکز یا روش ارسال دستگاه را معرفی می‌کنیم.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row-reverse gap-3 sm:items-center opacity-0 translate-y-4" data-cta="buttons">
+          <a
+            href={`tel:${phoneNumber}`}
+            class="group inline-flex items-center justify-center gap-2 rounded-2xl
+                   bg-white text-black px-6 py-4 text-sm sm:text-base font-semibold
+                   shadow-[0_0_0_1px_rgba(255,255,255,0.12)] transition
+                   hover:shadow-[0_0_0_1px_rgba(255,255,255,0.28),0_18px_60px_rgba(0,0,0,0.70)]
+                   active:scale-[0.99]"
+            aria-label={`تماس با شماره ${phoneNumber}`}
+          >
+            <span>تماس مستقیم</span>
+            <span class="text-black/65 group-hover:text-black/85 transition">({phoneDisplay})</span>
+            <span class="ms-1 inline-block transition-transform duration-300 group-hover:-translate-x-1">←</span>
+          </a>
+
+          <div class="text-right text-white/55 text-xs sm:text-sm leading-6">
+            پاسخ‌گویی سریع در ساعات کاری
+          </div>
+        </div>
+      </div>
+
+      <!-- side card -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-3xl bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8 overflow-hidden">
+          <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full blur-3xl bg-white/10"></div>
+            <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full blur-3xl bg-white/8"></div>
+          </div>
+
+          <div class="relative text-right">
+            <div class="text-white/75 text-sm">Apple Repair Center</div>
+            <div class="mt-2 text-white text-xl sm:text-2xl font-semibold leading-tight opacity-0 translate-y-3" data-cta="cardTitle">
+              مسیر سریع تا تعمیر مطمئن
+            </div>
+
+            <div class="mt-4 space-y-3 text-white/70 text-sm sm:text-base leading-7 opacity-0 translate-y-3" data-cta="cardList">
+              <p>• عیب‌یابی دقیق قبل از شروع تعمیر</p>
+              <p>• استفاده از قطعات اورجینال (در صورت نیاز)</p>
+              <p>• تست نهایی و تحویل با کیفیت</p>
+              <p>• امکان ارسال دستگاه از سراسر کشور</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reveal animation on view -->
+  <script is:inline>
+    (() => {
+      const root = document.currentScript?.closest("section");
+      if (!root) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const items = [
+        root.querySelector('[data-cta="title"]'),
+        root.querySelector('[data-cta="desc"]'),
+        root.querySelector('[data-cta="buttons"]'),
+        root.querySelector('[data-cta="cardTitle"]'),
+        root.querySelector('[data-cta="cardList"]'),
+      ].filter(Boolean);
+
+      const reveal = () => {
+        if (reduce) {
+          items.forEach(el => el.classList.add("cta-reveal"));
+          return;
+        }
+        items.forEach((el, i) => setTimeout(() => el.classList.add("cta-reveal"), 140 + i * 140));
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            reveal();
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "200px" });
+
+      io.observe(root);
+    })();
+  </script>
+
+  <style>
+    .cta-reveal{ opacity: 1 !important; transform: translateY(0) !important; }
+
+    .cta-scan{
+      stroke-dasharray: 220 1200;
+      stroke-dashoffset: 1400;
+      animation: ctaScan 4.9s linear infinite;
+      opacity: 0.95;
+    }
+    .s2 { animation-delay: 0.6s; }
+    .s3 { animation-delay: 1.2s; }
+    .s4 { animation-delay: 1.8s; }
+
+    @keyframes ctaScan{
+      0%   { stroke-dashoffset: 1400; opacity: 0; }
+      12%  { opacity: 0.95; }
+      100% { stroke-dashoffset: -800; opacity: 0; }
+    }
+
+    .cta-dots{
+      background-image: radial-gradient(rgba(255,255,255,0.16) 1px, rgba(0,0,0,0) 1px);
+      background-size: 22px 22px;
+      opacity: 0.12;
+      animation: ctaDrift 14s linear infinite;
+      mask-image: radial-gradient(circle at 55% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 82%);
+      -webkit-mask-image: radial-gradient(circle at 55% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.35) 58%, rgba(0,0,0,0) 82%);
+    }
+    @keyframes ctaDrift{
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(16px,-10px,0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .cta-scan, .cta-dots{ animation: none !important; }
+      [data-cta]{ transition: none !important; }
+    }
+  </style>
+</section>

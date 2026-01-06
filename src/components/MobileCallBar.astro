@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon/components";
+
+const phoneNumber = "02191300348";
+const phoneDisplay = "۰۲۱-۹۱۳۰۰۳۴۸";
+---
+
+<div class="mobile-callbar lg:hidden" role="region" aria-label="تماس سریع">
+  <a
+    href={`tel:${phoneNumber}`}
+    class="group w-full inline-flex items-center justify-center gap-2 rounded-2xl
+           bg-white text-black px-5 py-4 text-sm font-semibold
+           shadow-[0_0_0_1px_rgba(255,255,255,0.18),0_18px_80px_rgba(0,0,0,0.55)]
+           active:scale-[0.99] transition"
+    aria-label={`تماس با شماره ${phoneNumber}`}
+  >
+    <span class="relative inline-grid place-items-center h-9 w-9 rounded-xl bg-black/10">
+      <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
+      <span class="absolute inset-0 rounded-xl ring-1 ring-black/10"></span>
+    </span>
+
+    <span>تماس فوری</span>
+    <span class="text-black/60">({phoneDisplay})</span>
+
+    <span class="ms-1 inline-block transition-transform duration-300 group-active:-translate-x-1">←</span>
+  </a>
+
+  <style>
+    .mobile-callbar{
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom));
+      z-index: 50;
+    }
+  </style>
+</div>

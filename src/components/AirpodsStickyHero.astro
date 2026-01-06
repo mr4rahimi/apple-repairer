@@ -1,0 +1,318 @@
+---
+const id = "airpods-repair";
+const leftImg = "/images/airpod-left.webp";
+const rightImg = "/images/airpod-right.webp";
+---
+
+<section id={id} class="relative w-full" aria-label="تعمیر ایرپاد اپل" data-ap-section>
+  <!--
+    Stage: gives us scroll room to bring black overlay up over the sticky white hero
+    desktop & mobile both work; sticky keeps the hero fixed while overlay animates with scroll
+  -->
+  <div class="relative ap-stage">
+    <!-- STICKY WHITE HERO -->
+    <div class="sticky top-0 h-screen bg-white overflow-hidden flex items-center" data-ap-hero>
+      <div class="w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-black font-semibold tracking-tight leading-[1.05]
+                   text-3xl sm:text-4xl lg:text-5xl text-center
+                   opacity-0 translate-y-6"
+            data-ap="title"
+          >
+            تعمیر ایرپاد اپل
+          </h2>
+
+          <!-- 3 columns layout: empty | airpods | empty -->
+          <div class="mt-10 grid grid-cols-12 items-center">
+            <div class="col-span-3 hidden lg:block"></div>
+
+            <div class="col-span-12 lg:col-span-6 relative">
+              <div class="relative mx-auto w-full max-w-[820px]">
+                <div class="relative flex items-center justify-center gap-4 sm:gap-8">
+                  <!-- Left Airpod: ENTERS FROM LEFT (outside screen) -->
+                  <img
+                    src={leftImg}
+                    alt="ایرپاد چپ اپل"
+                    width="700"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    class="ap-airpod ap-left w-[46%] sm:w-[44%] h-auto opacity-0"
+                    data-ap="left"
+                  />
+
+                  <!-- Right Airpod: ENTERS FROM RIGHT (outside screen) -->
+                  <img
+                    src={rightImg}
+                    alt="ایرپاد راست اپل"
+                    width="700"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    class="ap-airpod ap-right w-[46%] sm:w-[44%] h-auto opacity-0"
+                    data-ap="right"
+                  />
+                </div>
+
+                <div class="pointer-events-none absolute -bottom-10 left-1/2 -translate-x-1/2 h-12 w-[72%] blur-2xl bg-black/10"></div>
+              </div>
+            </div>
+
+            <div class="col-span-3 hidden lg:block"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLACK OVERLAY (initially hidden below; scroll brings it up over white) -->
+    <div class="ap-overlay" data-ap-overlay aria-hidden="false">
+      <!-- top rounding for premium layer effect -->
+      <div class="ap-overlay-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-18 lg:py-20">
+          <div class="grid gap-10 lg:grid-cols-12 items-start">
+            <div class="lg:col-span-12 text-right">
+              <h3 class="text-white font-semibold text-xl sm:text-2xl">
+                تعمیر تخصصی AirPods و کیس شارژ
+              </h3>
+
+              <p class="mt-4 text-white/80 text-sm sm:text-base leading-8">
+                ایرپاد به‌دلیل طراحی فشرده و قطعات حساس صوتی، برای تعمیر به عیب‌یابی دقیق نیاز دارد. مشکلاتی مثل
+                کم شدن صدا، قطعی یک گوشی، نویز و خش‌خش، اختلال میکروفن، شارژ نشدن یا تخلیه سریع باتری معمولاً
+                به باتری، اسپیکر، میکروفن، برد یا کیس شارژ مربوط می‌شوند. در مرکز تخصصی تعمیر ایرپاد، ابتدا علت اصلی
+                مشخص می‌شود تا تعمیر با روش استاندارد انجام شود.
+              </p>
+
+              <div class="mt-8 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+                <h4 class="text-white/90 font-semibold text-base sm:text-lg">
+                  خدمات تعمیر ایرپاد شامل:
+                </h4>
+
+                <ul dir="ltr" class="mt-4 space-y-3 text-white/85 text-sm sm:text-base">
+                  <li class="flex flex-row-reverse items-start gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                    <span>عیب‌یابی تخصصی ایرپاد و کیس شارژ</span>
+                  </li>
+                  <li class="flex flex-row-reverse items-start gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                    <span>رفع مشکل شارژ نشدن ایرپاد یا کیس</span>
+                  </li>
+                  <li class="flex flex-row-reverse items-start gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                    <span>بررسی و رفع اختلال میکروفن و مکالمه</span>
+                  </li>
+                  <li class="flex flex-row-reverse items-start gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                    <span>رفع مشکل کم شدن صدا، نویز یا خش‌خش</span>
+                  </li>
+                  <li class="flex flex-row-reverse items-start gap-3">
+                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                    <span>رفع ایرادات نرم‌افزاری و مشکلات اتصال</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-8 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+                <h4 class="text-white/90 font-semibold text-base sm:text-lg">
+                  چه زمانی نیاز به تعمیر ایرپاد دارید؟
+                </h4>
+                <p class="mt-3 text-white/75 text-sm sm:text-base leading-8">
+                  اگر یکی از گوشی‌ها صدا ندارد، ایرپاد وصل نمی‌شود، کیس شارژ چراغ غیرعادی دارد،
+                  یا باتری سریع خالی می‌شود، بهتر است تعمیر را به مرکز تخصصی بسپارید.
+                  عیب‌یابی صحیح، از هزینه‌های اضافه جلوگیری می‌کند و نتیجه نهایی پایدارتر خواهد بود.
+                </p>
+              </div>
+            </div>
+
+            <div class="lg:col-span-12 text-right">
+              <div class="rounded-3xl bg-white/[0.03] p-6 sm:p-7">
+                <div class="text-white/80 text-sm">AirPods Service</div>
+                <div class="mt-2 text-white text-xl sm:text-2xl font-semibold leading-tight">
+                  تعمیر با دقت، تست نهایی، تحویل مطمئن
+                </div>
+
+                <div class="mt-4 space-y-3 text-white/70 text-sm sm:text-base leading-7">
+                  <p>• بررسی باتری هر گوشی و کیس شارژ</p>
+                  <p>• تست میکروفن، اسپیکر و کیفیت صدا</p>
+                  <p>• بررسی اتصال و عملکرد سنسورها</p>
+                  <p>• اعلام نتیجه عیب‌یابی قبل از تعمیر</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pointer-events-none h-10 bg-gradient-to-b from-black to-black/0"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll-driven overlay + entry animation -->
+  <script is:inline>
+    (() => {
+      const root = document.currentScript?.closest("section");
+      if (!root) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const stage = root.querySelector("[data-ap-section] .ap-stage");
+      const overlay = root.querySelector("[data-ap-overlay]");
+      const hero = root.querySelector("[data-ap-hero]");
+
+      const title = root.querySelector('[data-ap="title"]');
+      const left = root.querySelector('[data-ap="left"]');
+      const right = root.querySelector('[data-ap="right"]');
+
+      if (!stage || !overlay || !hero) return;
+
+      // --- (1) Airpod entry: slower + from outside screen + correct directions ---
+      const reveal = () => {
+        if (reduce) {
+          [title, left, right].forEach(el => {
+            if (!el) return;
+            el.style.opacity = "1";
+            el.style.transform = "translate3d(0,0,0)";
+          });
+          return;
+        }
+
+        if (title) title.classList.add("ap-reveal");
+
+        // slower & stagger
+        setTimeout(() => left && left.classList.add("ap-in-left"), 260);
+        setTimeout(() => right && right.classList.add("ap-in-right"), 420);
+      };
+
+      // reveal when hero enters view
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            reveal();
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.30, rootMargin: "220px" });
+
+      io.observe(hero);
+
+      // --- (2) Scroll-driven overlay: hidden until scroll; comes up over hero ---
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+      const updateOverlay = () => {
+  const rStage = stage.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+
+  // فقط وقتی سشن AirPods هنوز روی صفحه است overlay فعال باشد
+  // stage height ~200vh: وقتی rStage.bottom <= 0 یعنی کامل از viewport خارج شده
+
+  const updateOverlay = () => {
+  const rStage = stage.getBoundingClientRect();
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+
+  const progress = clamp((-rStage.top) / vh, 0, 1);
+
+  overlay.style.transform = `translate3d(0, ${(1 - progress) * 100}%, 0)`;
+  overlay.style.opacity = String(clamp(progress * 1.15, 0, 1));
+
+  if (progress >= 0.999) hero.style.opacity = "0";
+  else hero.style.opacity = "1";
+};
+
+  const progress = clamp((-rStage.top) / vh, 0, 1);
+
+  overlay.style.transform = `translate3d(0, ${(1 - progress) * 100}%, 0)`;
+  overlay.style.opacity = String(clamp(progress * 1.15, 0, 1));
+
+  if (progress >= 0.999) hero.style.opacity = "0";
+  else hero.style.opacity = "1";
+};
+
+
+      // initialize
+      overlay.style.transform = "translate3d(0,100%,0)";
+      overlay.style.opacity = "0";
+      updateOverlay();
+
+      
+
+      // update on scroll/resize
+      const onScroll = () => updateOverlay();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+
+    })();
+  </script>
+
+  <style>
+    /* Scroll space for overlay animation (tweak if you want slower/faster overlay rise) */
+    .ap-stage{ height: 200vh; }
+
+    /* Overlay is fixed to viewport like hero while animating */
+    /* Overlay lives ONLY inside the stage (so it can’t cover CTA after the section) */
+.ap-overlay{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 20;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+
+    .ap-overlay-surface{
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+      box-shadow: 0 -30px 80px rgba(0,0,0,0.55);
+      pointer-events: auto; /* allow selection/links if later needed */
+    }
+
+    /* Title reveal */
+    [data-ap="title"]{
+      transition: opacity 900ms ease, transform 900ms cubic-bezier(.2,.9,.15,1);
+    }
+    .ap-reveal{
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Airpods entry: slower & from outside screen */
+    .ap-airpod{
+      will-change: transform, opacity;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.18));
+    }
+
+    /* left comes from far LEFT */
+    .ap-left{
+      transform: translate3d(-55vw, 0, 0) scale(0.985);
+      transition:
+        transform 6400ms cubic-bezier(.16,1,.22,1),
+        opacity 1200ms ease;
+    }
+
+    /* right comes from far RIGHT */
+    .ap-right{
+      transform: translate3d(55vw, 0, 0) scale(0.985);
+      transition:
+        transform 6400ms cubic-bezier(.16,1,.22,1),
+        opacity 1200ms ease;
+    }
+
+    .ap-in-left{
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) scale(1) !important;
+    }
+    .ap-in-right{
+      opacity: 1 !important;
+      transform: translate3d(0, 0, 0) scale(1) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .ap-stage{ height: auto; }
+      .ap-overlay{ display: none; }
+      .ap-left, .ap-right, [data-ap="title"]{ transition: none !important; }
+    }
+  </style>
+</section>

@@ -1,0 +1,162 @@
+---
+const siteUrl = "https://www.apple-repairer.ir";
+const siteName = "نمایندگی تعمیرات اپل | Apple Repairer";
+const phone = "+982191300348"; // بهتره فرمت بین‌المللی
+const phoneDisplay = "02191300348";
+
+const sameAs = [
+  "https://instagram.com/apple-repairer",
+  "https://t.me/apple-repairer",
+  "https://x.com/apple-repairer",
+  "https://youtube.com/@apple-repairer",
+  "https://linkedin.com/company/apple-repairer"
+];
+
+// خدمات (لینک سکشن‌ها + صفحات سرویس)
+const services = [
+  { name: "تعمیر آیفون", url: `${siteUrl}/iphone-2/`, anchor: `${siteUrl}/#iphone-repair` },
+  { name: "تعمیر مک‌بوک", url: `${siteUrl}/macbook-repair/`, anchor: `${siteUrl}/#macbook-repair` },
+  { name: "تعمیر ایرپاد", url: `${siteUrl}/apple-airpods-repair/`, anchor: `${siteUrl}/#airpods-repair` },
+  { name: "تعمیرات آیپد", url: `${siteUrl}/%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%D8%A7%D8%AA-%D8%A2%DB%8C%D9%BE%D8%AF/`, anchor: `${siteUrl}/#ipad-repair` },
+  { name: "تعمیر تخصصی اپل واچ", url: `${siteUrl}/apple-watch-specialized-repairs/`, anchor: `${siteUrl}/#apple-watch-specialized-repairs` },
+];
+
+// FAQ (همونی که فرستادی)
+const faqs = [
+  { q: "هزینه تعمیرات محصولات اپل چقدر است؟", a: "هزینه تعمیر به مدل دستگاه، نوع خرابی و نیاز یا عدم نیاز به تعویض قطعه بستگی دارد. ابتدا عیب‌یابی انجام می‌شود و سپس هزینه دقیق اعلام می‌گردد تا قبل از شروع تعمیر تصمیم‌گیری شفاف داشته باشید." },
+  { q: "آیا تعمیرات با قطعات اورجینال انجام می‌شود؟", a: "در خدماتی که نیاز به تعویض قطعه باشد، اولویت با قطعات اصلی و اورجینال است. در صورت وجود گزینه‌های جایگزین (با کیفیت‌های مختلف)، قبل از اقدام به تعمیر، توضیح کامل ارائه می‌شود تا انتخاب آگاهانه انجام دهید." },
+  { q: "تعمیر آیفون و آیپد چقدر زمان می‌برد؟", a: "زمان تعمیر به نوع ایراد بستگی دارد. مشکلات نرم‌افزاری معمولاً سریع‌تر انجام می‌شوند، اما ایرادات سخت‌افزاری مثل نمایشگر، باتری یا برد ممکن است زمان بیشتری نیاز داشته باشد. هدف ما تحویل در کوتاه‌ترین زمان با حفظ کیفیت تعمیر است." },
+  { q: "اگر دستگاه من روشن نمی‌شود یا روی لوگوی اپل گیر کرده چه کار کنم؟", a: "این مشکل می‌تواند نرم‌افزاری (آپدیت ناقص، خطای iOS/iPadOS) یا سخت‌افزاری (باتری، برد، اتصالات) باشد. پیشنهاد می‌شود از اقدامات ریسکی مثل فلش‌های غیرمطمئن خودداری کنید و برای عیب‌یابی دقیق اقدام کنید." },
+  { q: "آیا برای تعمیر مک‌بوک، اطلاعات من پاک می‌شود؟", a: "در بسیاری از تعمیرات سخت‌افزاری نیازی به حذف اطلاعات نیست. با این حال، در برخی سناریوهای نرم‌افزاری یا ایرادات ذخیره‌سازی، ممکن است بکاپ توصیه شود. قبل از شروع کار، وضعیت و ریسک‌ها به شما توضیح داده می‌شود." },
+  { q: "آیا تعمیر اپل واچ و ایرپاد هم انجام می‌دهید؟", a: "بله. تعمیر اپل واچ شامل عیب‌یابی دقیق نرم‌افزاری/سخت‌افزاری و رفع مشکلاتی مثل صدا، میکروفن، نمایشگر و شارژ است. تعمیر ایرپاد نیز شامل مشکلات اتصال، باتری، کیس شارژ و افت کیفیت صدا می‌شود." },
+  { q: "چطور مطمئن شوم تعمیر به‌صورت استاندارد انجام شده است؟", a: "تعمیر استاندارد یعنی عیب‌یابی دقیق، استفاده از ابزار تخصصی، اجرای صحیح مراحل باز و بسته‌کردن، و انجام تست‌های نهایی (صدا، شارژ، تاچ، نمایشگر، ارتباطات). ما پس از تعمیر، تست‌های عملکردی را انجام می‌دهیم تا نتیجه پایدار باشد." },
+  { q: "آیا امکان ارسال دستگاه از شهرهای دیگر وجود دارد؟", a: "بله. کاربران سراسر ایران می‌توانند دستگاه را از طریق پست یا ارسال مطمئن به مراکز ما ارسال کنند. پیش از ارسال، برای هماهنگی و دریافت راهنمای بسته‌بندی و ثبت دستگاه، تماس بگیرید." },
+  { q: "برای مشکلات آب‌خوردگی آیفون یا آیپد چه اقدامی لازم است؟", a: "در صورت آب‌خوردگی، دستگاه را خاموش کنید، به شارژ نزنید و از خشک‌کردن با حرارت مستقیم (سشوار) خودداری کنید. آب‌خوردگی نیاز به بررسی سریع و شست‌وشوی برد/قطعات به روش تخصصی دارد تا از خرابی گسترده جلوگیری شود." },
+  { q: "آیا تعمیرات شامل ضمانت‌نامه می‌شود؟", a: "بسته به نوع تعمیر و قطعه تعویض‌شده، ضمانت‌نامه تعمیرات ارائه می‌شود. جزئیات ضمانت و شرایط آن هنگام ثبت دستگاه و قبل از شروع تعمیر اعلام خواهد شد." },
+];
+
+// شعب
+const branches = [
+  {
+    id: "central",
+    title: "شعبه مرکزی",
+    address: "تهران، خیابان قائم مقام فراهانی، پلاک 158، مرکز تعمیرات اپل",
+  },
+  {
+    id: "west",
+    title: "شعبه غرب",
+    address: "تهران، سعادت آباد، میدان کاج، کوچه دوازدهم علی اکبر، پلاک 30، مجتمع اداری کسری، طبقه اول واحد 5",
+  },
+];
+
+// اگر بعداً لوکیشن دقیق/کدپستی/مختصات داشتی، بهتر می‌شه. فعلاً فقط PostalAddress.
+const locations = branches.map((b) => ({
+  "@type": "Place",
+  "name": b.title,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IR",
+    "addressLocality": "Tehran",
+    "streetAddress": b.address
+  }
+}));
+
+// --- Schemas ---
+
+const webSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  "url": siteUrl,
+  "name": siteName,
+  "inLanguage": "fa-IR"
+  // اگر سرچ داخلی داری، این رو فعال کن:
+  // "potentialAction": {
+  //   "@type": "SearchAction",
+  //   "target": `${siteUrl}/?s={search_term_string}`,
+  //   "query-input": "required name=search_term_string"
+  // }
+};
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Apple Repairer",
+  "url": siteUrl,
+  "sameAs": sameAs,
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": phone,
+    "contactType": "customer service",
+    "areaServed": "IR",
+    "availableLanguage": ["fa", "en"]
+  }]
+};
+
+// خدمات تعمیراتی = RepairService (زیرمجموعه LocalBusiness)
+const repairService = {
+  "@context": "https://schema.org",
+  "@type": "RepairService",
+  "@id": `${siteUrl}/#repairservice`,
+  "name": "نمایندگی تعمیرات اپل",
+  "url": siteUrl,
+  "telephone": phone,
+  "priceRange": "$$",
+  "areaServed": "IR",
+  "inLanguage": "fa-IR",
+  "brand": {
+    "@type": "Brand",
+    "name": "Apple"
+  },
+  "parentOrganization": { "@id": `${siteUrl}/#organization` },
+  "hasMap": siteUrl,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IR",
+    "addressLocality": "Tehran"
+  },
+  "location": locations,
+  "makesOffer": services.map((s) => ({
+    "@type": "Offer",
+    "name": s.name,
+    "url": s.url,
+    "availability": "https://schema.org/InStock"
+  }))
+};
+
+const faqPage = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${siteUrl}/#faq`,
+  "mainEntity": faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    "name": q,
+    "acceptedAnswer": { "@type": "Answer", "text": a }
+  }))
+};
+
+// لیست خدمات برای صفحه اصلی (با anchor های سکشن)
+const servicesItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${siteUrl}/#services`,
+  "name": "خدمات تعمیرات اپل",
+  "itemListElement": services.map((s, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": s.name,
+    "url": s.anchor
+  }))
+};
+
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [webSite, organization, repairService, servicesItemList, faqPage]
+};
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(graph)}
+/>

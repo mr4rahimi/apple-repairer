@@ -8,7 +8,14 @@ import ServicesSlider from '../components/ServicesSlider.astro';
 import CTASection from '../components/CTASection.astro';
 import IphoneHeader from '../components/iphoneheader.astro';
 import VideoHero from '../components/VideoHero.astro';
-
+import AfterSalesAppleSection from '../components/AfterSalesAppleSection.astro';
+import MacbookRepairSection from '../components/MacbookRepairSection.astro';
+import AppleWatchSupportSection from '../components/AppleWatchSupportSection.astro';
+import IpadRepairSection from '../components/IpadRepairSection.astro';
+import AirpodsStickyHero from '../components/AirpodsStickyHero.astro';
+import CallToActionPro from '../components/CallToActionPro.astro';
+import FaqSection from '../components/FaqSection.astro';
+import SeoSchema from "../components/SeoSchema.astro";
 ---
 
 <BaseLayout>
@@ -20,6 +27,13 @@ import VideoHero from '../components/VideoHero.astro';
   <CTASection />
   <IphoneHeader />
   <VideoHero />
+  <AfterSalesAppleSection />
+  <MacbookRepairSection />
+  <AppleWatchSupportSection />
+  <IpadRepairSection />
+  <AirpodsStickyHero />
+  <CallToActionPro />
+  <FaqSection />
 
    <main class="max-w-7xl mx-auto px-4">
     <!-- ادامهٔ صفحه: سشن‌های بعدی -->
@@ -29,5 +43,6 @@ import VideoHero from '../components/VideoHero.astro';
 <!-- Head slot -->
 <Fragment slot="head">
   <title>نمایندگی تعمیرات اپل — Apple Repairer</title>
-  <meta name="description" content="نمایندگی تخصصی تعمیرات محصولات اپل" />
+  <meta name="description" content="تعمیرات تخصصی محصولات اپل در تهران نمایندگی مرکزی اپل با گارانتی رسمی apple و پیک رایگان" />
+  <SeoSchema />
 </Fragment>

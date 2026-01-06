@@ -1,0 +1,313 @@
+---
+const id = "#apple-watch-specialized-repairs"; 
+const videoSrc = "/videos/large_2x.mp4";
+
+const repairImages = [
+  { src: "/images/apple-whatch-repair-01.webp", alt: "نمونه تعمیر اپل واچ قبل از تعمیر", label: "قبل از تعمیر" },
+  { src: "/images/apple-whatch-repair-02.webp", alt: "نمونه تعمیر اپل واچ حین تعمیر", label: "هنگام تعمیر" },
+  { src: "/images/apple-whatch-repair-03.webp", alt: "نمونه تعمیر اپل واچ بعد از تعمیر", label: "بعد از تعمیر" },
+];
+---
+
+<section
+  id={id}
+  class="relative w-full overflow-hidden bg-black"
+  aria-label="خدمات پشتیبانی و تعمیرات اپل واچ"
+>
+  <!-- Background: animated tech lines -->
+  <div class="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-black"></div>
+
+    <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="awLineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="rgba(255,255,255,0)" />
+          <stop offset="0.5" stop-color="rgba(255,255,255,0.40)" />
+          <stop offset="1" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+
+        <filter id="awGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1">
+        <path d="M40,120 C220,70 290,240 420,210 S640,100 760,150 940,290 1160,210" />
+        <path d="M20,420 C220,360 340,520 520,470 S700,350 860,420 980,520 1180,460" />
+        <path d="M80,620 C280,520 330,650 520,590 S820,480 980,560 1070,650 1200,610" />
+        <path d="M60,260 C180,320 280,260 380,310 S540,420 680,340 860,250 980,330 1100,410 1200,360" />
+      </g>
+
+      <g filter="url(#awGlow)" fill="none" stroke="url(#awLineGrad)" stroke-width="2">
+        <path class="aw-scan a1" d="M40,120 C220,70 290,240 420,210 S640,100 760,150 940,290 1160,210" />
+        <path class="aw-scan a2" d="M20,420 C220,360 340,520 520,470 S700,350 860,420 980,520 1180,460" />
+        <path class="aw-scan a3" d="M80,620 C280,520 330,650 520,590 S820,480 980,560 1070,650 1200,610" />
+        <path class="aw-scan a4" d="M60,260 C180,320 280,260 380,310 S540,420 680,340 860,250 980,330 1100,410 1200,360" />
+      </g>
+
+      <g fill="rgba(255,255,255,0.55)">
+        <circle cx="420" cy="210" r="2.5" />
+        <circle cx="760" cy="150" r="2.5" />
+        <circle cx="520" cy="470" r="2.5" />
+        <circle cx="860" cy="420" r="2.5" />
+        <circle cx="980" cy="560" r="2.5" />
+        <circle cx="380" cy="310" r="2.5" />
+      </g>
+    </svg>
+
+    <div class="absolute inset-0 aw-dots"></div>
+  </div>
+
+  <!-- readability overlays -->
+  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!--
+      Desktop behavior:
+      - Make the section fill the viewport height.
+      - Left column: sticky video.
+      - Right column: scrollable content.
+      Mobile: normal flow (video then content).
+    -->
+    <div class="grid gap-10 lg:grid-cols-12 lg:h-screen lg:py-12 py-16 sm:py-20 items-start">
+      <!-- Video column -->
+      <div class="lg:col-span-5 order-1 lg:order-2">
+        <div class="lg:sticky lg:top-10">
+          <div class="relative overflow-hidden rounded-3xl bg-white/[0.03]">
+            <div class="relative aspect-[1/1] sm:aspect-[4/3] lg:aspect-[1/1]">
+              <video
+                class="absolute inset-0 w-full h-full object-cover"
+                muted
+                playsinline
+                loop
+                preload="none"
+                aria-label="ویدئوی اپل واچ"
+                data-aw-video
+              >
+                <source src={videoSrc} type="video/mp4" />
+              </video>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/10"></div>
+              <div class="absolute bottom-4 right-4 rounded-full bg-black/35 px-3 py-1 text-xs text-white/80 backdrop-blur">
+                Apple Watch
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Content column (scrolls on desktop) -->
+      <div class="lg:col-span-7 order-2 lg:order-1 text-right">
+        <div class="lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pe-2 aw-scroll">
+          <!-- Header -->
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/[0.05] px-3 py-1 text-xs sm:text-sm text-white/80">
+            <span class="h-1.5 w-1.5 rounded-full bg-white/60"></span>
+            <span>پشتیبانی نرم‌افزاری و سخت‌افزاری اپل واچ</span>
+          </div>
+
+          <h2
+            class="mt-5 text-white font-semibold leading-[1.15]
+                   text-2xl sm:text-3xl lg:text-4xl opacity-0 translate-y-3 will-change-transform"
+            data-aw="title"
+          >
+            خدمات پشتیبانی و تعمیرات اپل واچ
+          </h2>
+
+          <p
+            class="mt-4 text-white/80 text-sm sm:text-base leading-8 opacity-0 translate-y-3 will-change-transform"
+            data-aw="desc"
+          >
+            تکنسین‌های فعال در نمایندگی تعمیرات اپل، خدمات ویژه‌ای را برای تعمیر انواع مدل‌های اپل واچ ارائه می‌دهند.
+            در این مرکز، عیب‌یابی دقیق با تجهیزات تخصصی انجام می‌شود تا ساعت هوشمند شما بدون آسیب به بدنه یا قطعات حساس،
+            با روش اصولی تعمیر گردد. همچنین، در مشکلات نرم‌افزاری مانند کندی سیستم، خطاهای watchOS، یا اختلال در اتصال،
+            راهکارهای استاندارد و ایمن اجرا می‌شود.
+          </p>
+
+          <!-- Services list -->
+          <div
+            class="mt-6 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 opacity-0 translate-y-3"
+            data-aw="list"
+          >
+            <div class="text-white/90 text-sm sm:text-base font-semibold text-right">
+              خدمات قابل ارائه برای تعمیر اپل واچ:
+            </div>
+
+            <ul dir="ltr" class="mt-4 space-y-3 text-white/85 text-sm sm:text-base text-right">
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>تعمیر میکروفن اپل واچ</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>تعویض یا تعمیر صفحه نمایش شکسته ساعت</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>تعمیر بلندگو و قطعات صوتی اپل واچ</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>عیب‌یابی و رفع ایرادات نرم‌افزاری ساعت هوشمند</span>
+              </li>
+              <li class="flex flex-row-reverse items-start gap-3">
+                <span class="mt-2 h-1.5 w-1.5 rounded-full bg-white/70"></span>
+                <span>بررسی تخصصی تمامی بخش‌های سخت‌افزاری اپل واچ</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Added content: Examples -->
+          <div class="mt-10 opacity-0 translate-y-3" data-aw="examples">
+            <h3 class="text-white text-xl sm:text-2xl font-semibold">
+              نمونه تعمیرات اپل واچ
+            </h3>
+
+            <p class="mt-3 text-white/80 text-sm sm:text-base leading-8">
+              برای اطمینان خاطر شما، نمونه‌هایی از روند تعمیر اپل واچ در نمایندگی تعمیرات اپل آماده شده است.
+              این تصاویر می‌توانند دید واقعی‌تری از کیفیت کار، دقت در باز و بسته‌کردن دستگاه و نتیجه نهایی ارائه دهند.
+              اگر اپل واچ شما دچار شکستگی صفحه، اختلال صدا، مشکل میکروفن یا ایرادات نرم‌افزاری شده است،
+              می‌توانید با تماس مستقیم، مشاوره تخصصی دریافت کنید.
+            </p>
+
+            <!-- Gallery -->
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {repairImages.map((img) => (
+                <figure class="group">
+                  <div class="relative overflow-hidden rounded-2xl bg-white/[0.03]">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      width="500"
+                      height="500"
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/70 via-black/10 to-transparent">
+                      <figcaption class="text-right text-white/90 text-sm font-semibold">
+                        {img.label}
+                      </figcaption>
+                    </div>
+                  </div>
+
+                </figure>
+              ))}
+            </div>
+
+            <!-- SEO-ish helpful paragraph -->
+            <div class="mt-8 rounded-2xl bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6">
+              <h4 class="text-white/90 text-sm sm:text-base font-semibold text-right">
+                چرا تعمیر اپل واچ را به نمایندگی بسپاریم؟
+              </h4>
+              <p class="mt-3 text-white/75 text-sm sm:text-base leading-8 text-right">
+                اپل واچ به دلیل ساختار فشرده و قطعات حساس (مانند فلت‌ها، سنسورها و آب‌بندی) نیاز به تعمیر اصولی دارد.
+                در نمایندگی، ابتدا عیب‌یابی دقیق انجام می‌شود، سپس تعمیر یا تعویض قطعه با روش استاندارد صورت می‌گیرد
+                و در پایان، تست‌های عملکردی شامل صدا، میکروفن، شارژدهی و پایداری سیستم انجام می‌شود تا دستگاه با اطمینان
+                به شما تحویل داده شود.
+              </p>
+            </div>
+          </div>
+
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anim + smart video play -->
+  <script is:inline>
+    (() => {
+      const root = document.currentScript?.closest("section");
+      if (!root) return;
+
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const video = root.querySelector("[data-aw-video]");
+
+      const reveal = () => {
+        const order = ["title", "desc", "list", "examples", "cta"];
+        order.forEach((k, i) => {
+          const el = root.querySelector(`[data-aw="${k}"]`);
+          if (!el) return;
+          if (reduce) el.classList.add("aw-reveal");
+          else setTimeout(() => el.classList.add("aw-reveal"), 140 + i * 160);
+        });
+      };
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            reveal();
+            if (video) { try { video.play(); } catch(_) {} }
+          } else {
+            if (video) { try { video.pause(); } catch(_) {} }
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "200px" });
+
+      io.observe(root);
+    })();
+  </script>
+
+  <style>
+    /* Reveal */
+    [data-aw] { transition: opacity 700ms ease, transform 700ms ease; }
+    .aw-reveal { opacity: 1 !important; transform: translateY(0) !important; }
+
+    /* Scan lines */
+    .aw-scan{
+      stroke-dasharray: 220 1200;
+      stroke-dashoffset: 1400;
+      animation: awScan 4.8s linear infinite;
+      opacity: 0.95;
+    }
+    .a2 { animation-delay: 0.6s; }
+    .a3 { animation-delay: 1.2s; }
+    .a4 { animation-delay: 1.8s; }
+
+    @keyframes awScan {
+      0%   { stroke-dashoffset: 1400; opacity: 0; }
+      12%  { opacity: 0.95; }
+      100% { stroke-dashoffset: -800; opacity: 0; }
+    }
+
+    /* Dots */
+    .aw-dots{
+      background-image: radial-gradient(rgba(255,255,255,0.16) 1px, rgba(0,0,0,0) 1px);
+      background-size: 22px 22px;
+      opacity: 0.16;
+      animation: awDrift 12s linear infinite;
+      mask-image: radial-gradient(circle at 60% 40%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 78%);
+      -webkit-mask-image: radial-gradient(circle at 60% 40%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0) 78%);
+    }
+    @keyframes awDrift {
+      0% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(18px, -10px, 0); }
+      100% { transform: translate3d(0,0,0); }
+    }
+
+    /* Make desktop inner scroll look clean */
+    /* Hide scrollbar (keep scrolling working) */
+.aw-scroll{
+  -ms-overflow-style: none;     /* IE/Edge legacy */
+  scrollbar-width: none;        /* Firefox */
+}
+.aw-scroll::-webkit-scrollbar{
+  width: 0px;                   /* Chrome/Safari */
+  height: 0px;
+}
+.aw-scroll::-webkit-scrollbar-thumb{
+  background: transparent;
+}
+
+
+    @media (prefers-reduced-motion: reduce){
+      .aw-scan, .aw-dots { animation: none !important; }
+      [data-aw]{ transition: none !important; }
+    }
+  </style>
+</section>

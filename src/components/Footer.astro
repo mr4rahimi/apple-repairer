@@ -1,0 +1,213 @@
+---
+import { Icon } from "astro-icon/components";
+
+const base = "https://www.apple-repairer.ir";
+
+const services = [
+  { title: "تعمیر آیفون", href: `${base}/iphone-2/` },
+  { title: "تعمیر ایرپاد", href: `${base}/apple-airpods-repair/` },
+  { title: "تعمیر مک‌بوک", href: `${base}/macbook-repair/` },
+  { title: "تعمیرات آیپد", href: `${base}/%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%D8%A7%D8%AA-%D8%A2%DB%8C%D9%BE%D8%AF/` },
+  { title: "تعمیرات مانیتور اپل", href: `${base}/%D8%AA%D8%B9%D9%85%DB%8C%D8%B1%D8%A7%D8%AA-%D9%85%D8%A7%D9%86%DB%8C%D8%AA%D9%88%D8%B1-%D8%A7%D9%BE%D9%84/` },
+  { title: "تعمیر تخصصی اپل واچ", href: `${base}/apple-watch-specialized-repairs/` },
+];
+
+const links = [
+  { title: "مقالات", href: `${base}/blog/` },
+  { title: "درباره ما", href: `${base}/about-us/` },
+  { title: "تماس با ما", href: `${base}/contact-us/` },
+];
+
+const phoneNumber = "02191300348";
+const phoneDisplay = "۰۲۱-۹۱۳۰۰۳۴۸";
+
+// Placeholder social links (you will update)
+const social = [
+  { name: "Instagram", icon: "lucide:instagram", href: "https://instagram.com/apple-repairer" },
+  { name: "Telegram", icon: "lucide:send", href: "https://t.me/apple-repairer" },
+  { name: "WhatsApp", icon: "lucide:message-circle", href: "https://wa.me/000000000000" },
+  { name: "YouTube", icon: "lucide:youtube", href: "https://youtube.com/@apple-repairer" },
+  { name: "X", icon: "lucide:twitter", href: "https://x.com/apple-repairer" },
+  { name: "LinkedIn", icon: "lucide:linkedin", href: "https://linkedin.com/company/apple-repairer" },
+];
+---
+
+<footer class="relative w-full bg-black overflow-hidden" aria-label="پاورقی سایت">
+  <!-- Background: subtle tech lines -->
+  <div class="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-black"></div>
+
+    <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="ftLineGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="rgba(255,255,255,0)" />
+          <stop offset="0.5" stop-color="rgba(255,255,255,0.25)" />
+          <stop offset="1" stop-color="rgba(255,255,255,0)" />
+        </linearGradient>
+        <filter id="ftGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1">
+        <path d="M40,160 C260,90 300,260 470,220 S760,150 900,190 1030,270 1160,230" />
+        <path d="M10,460 C240,380 330,560 520,500 S760,390 920,450 1050,540 1180,490" />
+      </g>
+
+      <g filter="url(#ftGlow)" fill="none" stroke="url(#ftLineGrad)" stroke-width="2">
+        <path class="ft-scan a1" d="M40,160 C260,90 300,260 470,220 S760,150 900,190 1030,270 1160,230" />
+        <path class="ft-scan a2" d="M10,460 C240,380 330,560 520,500 S760,390 920,450 1050,540 1180,490" />
+      </g>
+    </svg>
+
+    <div class="absolute -top-32 -right-28 h-96 w-96 rounded-full blur-3xl bg-white/10"></div>
+    <div class="absolute -bottom-32 -left-28 h-96 w-96 rounded-full blur-3xl bg-white/8"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-10">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <!-- Brand -->
+      <div class="lg:col-span-5 text-right">
+        <div class="h-15 w-15 mb-10  rounded-xl bg-white/[0.06] grid place-items-center shadow-[0_0_0_1px_rgba(255,255,255,0.10)]">
+            <img src="/images/apple-logo.svg" alt="Apple Repairer" class="h-6 w-auto" />
+          </div>
+        <div dir="ltr" class="flex items-center justify-end gap-3">
+          
+          <div>
+            <div class="text-white font-semibold text-lg sm:text-xl leading-tight">
+              نمایندگی تعمیرات اپل
+            </div>
+            <div class="text-white/55 text-xs sm:text-sm mt-1">
+              Apple Repairer • خدمات تخصصی محصولات اپل
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-5 text-white/75 text-sm sm:text-base leading-8">
+          Apple Repairer با تمرکز بر استانداردهای تعمیرات اپل، خدمات تخصصی آیفون، آیپد، مک‌بوک، اپل واچ و ایرپاد را ارائه می‌دهد.
+          هدف ما عیب‌یابی دقیق، استفاده از قطعات باکیفیت و تحویل مطمئن در سریع‌ترین زمان ممکن است.
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row-reverse gap-3 sm:items-center">
+          <a
+            href={`tel:${phoneNumber}`}
+            class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-5 py-3 text-sm sm:text-base font-semibold
+                   shadow-[0_0_0_1px_rgba(255,255,255,0.14)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.28),0_18px_60px_rgba(0,0,0,0.70)]
+                   active:scale-[0.99] transition"
+            aria-label={`تماس با شماره ${phoneNumber}`}
+          >
+            <Icon name="lucide:phone" class="h-5 w-5" aria-hidden="true" />
+            <span>تماس سریع</span>
+            <span class="text-black/70">({phoneDisplay})</span>
+          </a>
+
+          <a
+            href={`${base}/contact-us/`}
+            class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/[0.06] text-white px-5 py-3 text-sm sm:text-base font-semibold
+                   shadow-[0_0_0_1px_rgba(255,255,255,0.10)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.18)]
+                   transition"
+          >
+          </a>
+        </div>
+
+        <!-- Social -->
+        <div class="mt-8">
+          <div class="text-white/80 text-sm font-semibold text-right">راه‌های ارتباطی</div>
+          <div class="mt-4 flex flex-wrap justify-end gap-2">
+            {social.map((s) => (
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group inline-flex items-center gap-2 rounded-2xl bg-white/[0.06] px-4 py-2 text-sm text-white/80
+                       shadow-[0_0_0_1px_rgba(255,255,255,0.10)]
+                       hover:shadow-[0_0_0_1px_rgba(255,255,255,0.18)] transition"
+                aria-label={s.name}
+              >
+                <Icon name={s.icon} class="h-5 w-5 text-white/85 group-hover:text-white transition" aria-hidden="true" />
+                <span class="hidden sm:inline">{s.name}</span>
+                <span class="sm:hidden">شبکه</span>
+              </a>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="lg:col-span-4 text-right">
+        <div class="text-white font-semibold text-base sm:text-lg">خدمات</div>
+        <ul class="mt-5 space-y-3">
+          {services.map((l) => (
+            <li>
+              <a
+                href={l.href}
+                class="inline-flex items-center justify-between w-full rounded-xl bg-white/[0.03] px-4 py-3
+                       text-white/80 hover:text-white transition
+                       shadow-[0_0_0_1px_rgba(255,255,255,0.08)]
+                       hover:shadow-[0_0_0_1px_rgba(255,255,255,0.14)]"
+              >
+                <span>{l.title}</span>
+                <Icon name="lucide:chevron-left" class="h-5 w-5 text-white/60" aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Useful links -->
+      <div class="lg:col-span-3 text-right">
+        <div class="text-white font-semibold text-base sm:text-lg">لینک‌های مفید</div>
+        <ul class="mt-5 space-y-3">
+          {links.map((l) => (
+            <li>
+              <a
+                href={l.href}
+                class="inline-flex items-center justify-between w-full rounded-xl bg-white/[0.03] px-4 py-3
+                       text-white/80 hover:text-white transition
+                       shadow-[0_0_0_1px_rgba(255,255,255,0.08)]
+                       hover:shadow-[0_0_0_1px_rgba(255,255,255,0.14)]"
+              >
+                <span>{l.title}</span>
+                <Icon name="lucide:chevron-left" class="h-5 w-5 text-white/60" aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row-reverse gap-3 sm:items-center sm:justify-between">
+      <div class="text-white/55 text-xs sm:text-sm text-right">
+        © {new Date().getFullYear()} Apple-Repairer.ir — تمامی حقوق محفوظ است.
+      </div>
+      <div class="text-white/55 text-xs sm:text-sm text-right">
+        طراحی با ❤️ برای دوستداران اپل
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .ft-scan{
+      stroke-dasharray: 220 1200;
+      stroke-dashoffset: 1400;
+      animation: ftScan 5.2s linear infinite;
+      opacity: 0.95;
+    }
+    .a2{ animation-delay: 0.9s; }
+
+    @keyframes ftScan{
+      0%   { stroke-dashoffset: 1400; opacity: 0; }
+      12%  { opacity: 0.95; }
+      100% { stroke-dashoffset: -800; opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .ft-scan{ animation: none !important; }
+    }
+  </style>
+</footer>
